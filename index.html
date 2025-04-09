@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Portfolio</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right top, #1d2b64, #f8cdda);
+      color: #fefefe;
+      overflow-x: hidden;
+      animation: fadeInBody 1.2s ease-in-out;
+    }
+
+    @keyframes fadeInBody {
+      0% { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      animation: slideInTop 1s ease-in-out;
+    }
+
+    @keyframes slideInTop {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    section {
+      padding: 1rem 1.25rem;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 0.8s ease-in forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      border-left: 5px solid #fff;
+      padding-left: 0.75rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInCard 1s ease-in-out;
+    }
+
+    @keyframes fadeInCard {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li::before {
+      content: "\2022";
+      color: #ffda79;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .skill {
+      background: #2c3e50;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      text-align: center;
+      animation: pulseSkill 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseSkill {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    .project-info {
+      display: none;
+      margin-top: 0.75rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.75rem;
+      border-radius: 8px;
+      animation: fadeInfo 0.6s ease-in-out;
+    }
+
+    @keyframes fadeInfo {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-toggle {
+      background-color: #ffda79;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-toggle:hover {
+      background-color: #fff176;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(255, 218, 121, 0.5);
+    }
+
+    .contact-info {
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+  <script>
+    function toggleInfo(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+        el.classList.add('animated');
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Pallavi A N</h1>
+    <p>Graduate</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Aspiring computer science student passionate about building smart and responsive applications with strong problem-solving skills.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Java</div>
+      <div class="skill">C</div>
+      <div class="skill">C++</div>
+      <div class="skill">Python</div>
+      <div class="skill">R Programming</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">VB.Net</div>
+      <div class="skill">PHP</div>
+      <div class="skill">SQL</div>
+      <div class="skill">JavaScript</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="card">
+      <ul>
+        <li>English – Fluent</li>
+        <li>Kannada – Native</li>
+        <li>Hindi – Intermediate</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>HYDRAULIC POWER PLANT MANAGEMENT SYSTEM</h3>
+      <button class="btn-toggle" onclick="toggleInfo('project1')">View Details</button>
+      <div class="project-info" id="project1">
+        <p>The Hydraulic Power Station Management Web Application is a comprehensive software solution designed to streamline and optimize the operation and maintenance of hydraulic power stations. It enables power station operators and managers to efficiently monitor, control, and manage various aspects of the power station's performance.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>SHOPWAVE</h3>
+      <button class="btn-toggle" onclick="toggleInfo('project2')">View Details</button>
+      <div class="project-info" id="project2">
+        <p>Shop Wave is an e-commerce app designed to make shopping easy and enjoyable. Users can browse through various product categories, view images, and check out detailed product information in a user-friendly layout.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>CONVERSATIONAL AI DASHBOARD "DATALENS"</h3>
+      <button class="btn-toggle" onclick="toggleInfo('project3')">View Details</button>
+      <div class="project-info" id="project3">
+        <p>Datalens is a data visualization platform allowing users to upload data, customize graphs, and receive insights via a chatbot, making it ideal for professionals and educators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="card">
+      <p><strong>Master of Computer Application</strong><br>Kristu Jayanti College (2023 - 2025), Bangalore<br>78%</p>
+      <p><strong>Bachelor of Computer Application</strong><br>Bapuji Institute Of Hi-Tech Education (2020 - 2023), Davanagere<br>90%</p>
+      <p><strong>Pre University</strong><br>Sri Siddaganga Independent PU College (2018 - 2020), Davanagere<br>83%</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Achievements</h2>
+    <div class="card">
+      <ul>
+        <li>Secured First place in IT Quiz in MANOEUVRE 2.0 2024</li>
+        <li>Developed a model for "Driver Drowsiness Detection"</li>
+        <li>Team Coordinator in MANOEUVRE 2.0 2024 (Kristu Jayanti College)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="card contact-info">
+      <p><strong>Email:</strong> pallaviarkachar07@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9019658416</p>
+      <p><strong>LinkedIn:</strong>https://www.linkedin.com/in/pallavi-a-n-0a2256330</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+</body>
+</html>
