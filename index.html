@@ -3,282 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pallavi A N | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>Your Name | Portfolio</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right top, #1d2b64, #f8cdda);
+      color: #fefefe;
+      overflow-x: hidden;
+      animation: fadeInBody 1.2s ease-in-out;
+    }
+
+    @keyframes fadeInBody {
+      0% { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      animation: slideInTop 1s ease-in-out;
+    }
+
+    @keyframes slideInTop {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    section {
+      padding: 1rem 1.25rem;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 0.8s ease-in forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      border-left: 5px solid #fff;
+      padding-left: 0.75rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeInCard 1s ease-in-out;
+    }
+
+    @keyframes fadeInCard {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li::before {
+      content: "\2022";
+      color: #ffda79;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .skill {
+      background: #2c3e50;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      text-align: center;
+      animation: pulseSkill 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseSkill {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    .project-info {
+      display: none;
+      margin-top: 0.75rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.75rem;
+      border-radius: 8px;
+      animation: fadeInfo 0.6s ease-in-out;
+    }
+
+    @keyframes fadeInfo {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-toggle {
+      background-color: #ffda79;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-toggle:hover {
+      background-color: #fff176;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(255, 218, 121, 0.5);
+    }
+
+    .contact-info {
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+  <script>
+    function toggleInfo(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+        el.classList.add('animated');
+      }
+    }
+  </script>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo"><i class="fas fa-code"></i> Pallavi</a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Pallavi A N</h1>
+    <p>Graduate</p>
   </header>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm Pallavi A N</h1>
-      <p>A passionate computer science graduate specializing in building smart and responsive applications with strong problem-solving skills.</p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
+
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Aspiring computer science student passionate about building smart and responsive applications with strong problem-solving skills.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Java</div>
+      <div class="skill">C</div>
+      <div class="skill">C++</div>
+      <div class="skill">Python</div>
+      <div class="skill">R Programming</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">VB.Net</div>
+      <div class="skill">PHP</div>
+      <div class="skill">SQL</div>
+      <div class="skill">JavaScript</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="card">
+      <ul>
+        <li>English – Fluent</li>
+        <li>Kannada – Native</li>
+        <li>Hindi – Intermediate</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>HYDRAULIC POWER PLANT MANAGEMENT SYSTEM</h3>
+      <button class="btn-toggle" onclick="toggleInfo('project1')">View Details</button>
+      <div class="project-info" id="project1">
+        <p>The Hydraulic Power Station Management Web Application is a comprehensive software solution designed to streamline and optimize the operation and maintenance of hydraulic power stations. It enables power station operators and managers to efficiently monitor, control, and manage various aspects of the power station's performance.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>SHOPWAVE</h3>
+      <button class="btn-toggle" onclick="toggleInfo('project2')">View Details</button>
+      <div class="project-info" id="project2">
+        <p>Shop Wave is an e-commerce app designed to make shopping easy and enjoyable. Users can browse through various product categories, view images, and check out detailed product information in a user-friendly layout.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>CONVERSATIONAL AI DASHBOARD "DATALENS"</h3>
+      <button class="btn-toggle" onclick="toggleInfo('project3')">View Details</button>
+      <div class="project-info" id="project3">
+        <p>Datalens is a data visualization platform allowing users to upload data, customize graphs, and receive insights via a chatbot, making it ideal for professionals and educators.</p>
       </div>
     </div>
   </section>
-  
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-       
-        <div class="about-text">
-          <h3>Computer Science Graduate</h3>
-          <p>I'm an aspiring computer science professional with expertise in multiple programming languages and frameworks. My passion lies in creating efficient, user-friendly applications that solve real-world problems.</p>
-          <p>With a strong academic background and hands-on project experience, I bring both theoretical knowledge and practical skills to the table. I'm particularly interested in web development, data visualization, and AI applications.</p>
-          <p>When I'm not coding, you can find me exploring new technologies, participating in tech quizzes, or mentoring fellow students.</p>
-        </div>
-      </div>
+
+  <section>
+    <h2>Education</h2>
+    <div class="card">
+      <p><strong>Master of Computer Application</strong><br>Kristu Jayanti College (2023 - 2025), Bangalore<br>78%</p>
+      <p><strong>Bachelor of Computer Application</strong><br>Bapuji Institute Of Hi-Tech Education (2020 - 2023), Davanagere<br>90%</p>
+      <p><strong>Pre University</strong><br>Sri Siddaganga Independent PU College (2018 - 2020), Davanagere<br>83%</p>
     </div>
   </section>
-  
-  <!-- Skills Section -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <h2 class="section-title">My Skills</h2>
-      <div class="skills-container">
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-java"></i></div>
-          <h3 class="skill-name">Java</h3>
-          <p class="skill-level">Advanced</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-c"></i></div>
-          <h3 class="skill-name">C/C++</h3>
-          <p class="skill-level">Advanced</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-python"></i></div>
-          <h3 class="skill-name">Python</h3>
-          <p class="skill-level">Advanced</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-          <h3 class="skill-name">R Programming</h3>
-          <p class="skill-level">Intermediate</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-html5"></i></div>
-          <h3 class="skill-name">HTML/CSS</h3>
-          <p class="skill-level">Advanced</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-js"></i></div>
-          <h3 class="skill-name">JavaScript</h3>
-          <p class="skill-level">Intermediate</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-database"></i></div>
-          <h3 class="skill-name">SQL</h3>
-          <p class="skill-level">Advanced</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-php"></i></div>
-          <h3 class="skill-name">PHP</h3>
-          <p class="skill-level">Intermediate</p>
-        </div>
-      </div>
+
+  <section>
+    <h2>Achievements</h2>
+    <div class="card">
+      <ul>
+        <li>Secured First place in IT Quiz in MANOEUVRE 2.0 2024</li>
+        <li>Developed a model for "Driver Drowsiness Detection"</li>
+        <li>Team Coordinator in MANOEUVRE 2.0 2024 (Kristu Jayanti College)</li>
+      </ul>
     </div>
   </section>
-  
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">My Projects</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Hydraulic Power Plant Management System">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Hydraulic Power Plant Management System</h3>
-            <p class="project-desc">A comprehensive web application for monitoring and managing hydraulic power stations with real-time data analysis.</p>
-            <div class="project-tags">
-              <span class="tag">Web Development</span>
-              <span class="tag">Database</span>
-              <span class="tag">Energy Management</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link primary">View Details</a>
-              <a href="#" class="project-link secondary">Code</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ShopWave">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">ShopWave</h3>
-            <p class="project-desc">An e-commerce platform with intuitive UI, product management, and seamless checkout experience.</p>
-            <div class="project-tags">
-              <span class="tag">E-commerce</span>
-              <span class="tag">UI/UX</span>
-              <span class="tag">Web App</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link primary">View Details</a>
-              <a href="#" class="project-link secondary">Code</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Datalens">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Datalens</h3>
-            <p class="project-desc">Conversational AI dashboard for data visualization with customizable graphs and chatbot insights.</p>
-            <div class="project-tags">
-              <span class="tag">Data Visualization</span>
-              <span class="tag">AI</span>
-              <span class="tag">Dashboard</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link primary">View Details</a>
-              <a href="#" class="project-link secondary">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="card contact-info">
+      <p><strong>Email:</strong> pallaviarkachar07@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9019658416</p>
+      <p><strong>LinkedIn:</strong>https://www.linkedin.com/in/pallavi-a-n-0a2256330</p>
     </div>
   </section>
-  
-  <!-- Education Section -->
-  <section id="education" class="section education">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2023 - 2025</div>
-            <h3 class="timeline-title">Master of Computer Application</h3>
-            <p class="timeline-text">Kristu Jayanti College, Bangalore<br>Percentage: 78%</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2020 - 2023</div>
-            <h3 class="timeline-title">Bachelor of Computer Application</h3>
-            <p class="timeline-text">Bapuji Institute Of Hi-Tech Education, Davanagere<br>Percentage: 90%</p>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">2018 - 2020</div>
-            <h3 class="timeline-title">Pre University</h3>
-            <p class="timeline-text">Sri Siddaganga Independent PU College, Davanagere<br>Percentage: 83%</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-text">
-                <a href="mailto:pallaviarkachar07@gmail.com">pallaviarkachar07@gmail.com</a>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-text">
-                <a href="tel:+919019658416">+91-9019658416</a>
-              </div>
-            </div>
-            
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-linkedin"></i>
-              </div>
-              <div class="contact-text">
-                <a href="https://www.linkedin.com/in/pallavi-a-n-0a2256330" target="_blank">linkedin.com/in/pallavi-a-n</a>
-              </div>
-            </div>
-          </div>
-          
-          <h3>Follow Me</h3>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-        
-        <div class="contact-form">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <a href="#" class="footer-logo">Pallavi</a>
-        <p class="footer-text">Computer Science Graduate | Web Developer | Problem Solver</p>
-        
-      </div>
-    </div>
+
+  <footer class="footer">
+    &copy; 2025 Your Name. All rights reserved.
   </footer>
 </body>
 </html>
