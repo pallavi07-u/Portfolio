@@ -7,75 +7,71 @@
 
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <style>
+<style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
+  
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to right top, #1d2b64, #f8cdda);
       color: #fefefe;
     }
-
+  
     header {
       background: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem 1rem;
+      padding: 24px 16px;
       text-align: center;
       position: sticky;
       top: 0;
       backdrop-filter: blur(10px);
       z-index: 1000;
-
     }
-
+  
     header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 0.25rem;
+      font-size: 51.2px;
+      margin-bottom: 4px;
     }
-
+  
     header p {
-      font-size: 0.95rem;
+      font-size: 15.2px;
       color: #ddd;
     }
-
+  
     section {
-      padding: 2rem 0.25rem;
-      max-width: 1000x;
+      padding: 32px 4px;
+      max-width: 1000px;
       margin: auto;
-      
     }
-
+  
     h2 {
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
+      font-size: 28px;
+      margin-bottom: 12px;
       border-left: 5px solid #fff;
-      padding-left: 0.75rem;
+      padding-left: 12px;
     }
-
+  
     .card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 12px;
-      padding: 1rem;
-      margin-bottom: 1rem;
+      padding: 16px;
+      margin-bottom: 16px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       animation: fadeInCard 1s ease-in-out;
     }
-
+  
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
-
+  
     ul {
       list-style: none;
     }
-
+  
     li::before {
       content: "\2022";
       color: #ffda79;
@@ -83,63 +79,60 @@
       display: inline-block;
       width: 1em;
     }
-
+  
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.75rem;
+      gap: 12px;
     }
-
+  
     .skill {
       background: #2c3e50;
-      padding: 0.5rem 0.75rem;
+      padding: 8px 12px;
       border-radius: 8px;
       text-align: center;
-     
-    }  
-
+    }
+  
     .footer {
       background: rgba(0, 0, 0, 0.8);
       text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.85rem;
+      padding: 24px 16px;
+      font-size: 13.6px;
       color: #ccc;
     }
-
+  
     .project-info {
       display: none;
-      margin-top: 0.75rem;
+      margin-top: 12px;
       background: rgba(255, 255, 255, 0.2);
-      padding: 0.75rem;
+      padding: 12px;
       border-radius: 8px;
-      
     }
-
+  
     .btn-toggle {
       background-color: #ffda79;
       color: #000;
-      padding: 0.5rem 1rem;
+      padding: 8px 16px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 0.5rem;
+      margin-top: 8px;
       font-weight: bold;
-  
     }
-
+  
     .btn-toggle:hover {
       background-color: #fff176;
       transform: scale(1.05);
       box-shadow: 0 4px 10px rgba(255, 218, 121, 0.5);
     }
-
+  
     .contact-info {
       line-height: 2.6;
     }
-
+  
     @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.3rem; }
+      h1 { font-size: 25.6px; }
+      h2 { font-size: 20.8px; }
     }
   </style>
 </head>
